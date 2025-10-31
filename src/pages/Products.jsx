@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Products = () => {
   const { products } = useLoaderData();
-  console.log(products);
+  // console.log(products);
 
   return (
     <div className="grid grid-cols-3 gap-3 p-3">

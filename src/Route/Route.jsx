@@ -3,7 +3,6 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Products from "../pages/Products";
-
 import CardDetail from "../pages/CardDetail";
 
 const myRouter = createBrowserRouter([
@@ -23,6 +22,8 @@ const myRouter = createBrowserRouter([
       {
         path: "/cardDetail/:id",
         element: <CardDetail></CardDetail>,
+        loader: ({ params }) =>
+          fetch(`https://dummyjson.com/products/${params.id}`),
       },
       {
         path: "/dashboard",
