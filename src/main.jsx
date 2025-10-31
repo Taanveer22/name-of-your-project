@@ -1,17 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
 // import { Outlet } from "react-router-dom";
-
 // import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // import MainLayout from "./layouts/MainLayout";
 // import Home from "./pages/Home/Home";
 // import About from "./pages/About/About";
 // import Products from "./pages/Products/Products";
-
-import { RouterProvider } from "react-router-dom";
-import myRouter from "./Route/Route";
 
 // const myRouter = createBrowserRouter([
 //   {
@@ -27,8 +19,6 @@ import myRouter from "./Route/Route";
 //     element: <div>about route hitted</div>,
 //   }
 // ]);
-
-
 
 // const myRouter = createBrowserRouter([
 //   {
@@ -52,7 +42,6 @@ import myRouter from "./Route/Route";
 //   },
 // ]);
 
-
 // const myRouter = createBrowserRouter([
 //   {
 //     path: "/",
@@ -74,6 +63,11 @@ import myRouter from "./Route/Route";
 //   },
 // ]);
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { RouterProvider } from "react-router-dom";
+import myRouter from "./Route/Route";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
