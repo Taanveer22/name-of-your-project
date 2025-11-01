@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { setToLocalStorage } from "../utilities";
 
 const Card = ({ product }) => {
   const { id, title, price, thumbnail, rating } = product || {};
   // console.log(id);
+  const handleAddToDashboard = (card) => {
+    setToLocalStorage(card);
+  };
 
   return (
     <div>

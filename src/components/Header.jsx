@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      {" "}
       <div className="bg-green-200 rounded-lg">
         <div className="flex justify-between px-5 shadow-lg py-5 ">
           <div className="text-2xl font-bold">

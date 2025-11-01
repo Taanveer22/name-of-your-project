@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Products from "../pages/Products";
-import CardDetail from "../pages/CardDetail";
+import CardDetail from "../components/CardDetail";
 
 const myRouter = createBrowserRouter([
   {
