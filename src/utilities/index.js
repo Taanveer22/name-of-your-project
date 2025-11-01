@@ -28,7 +28,16 @@ const setToLocalStorage = (cardDetail) => {
   }
 };
 //======================== remove data from local storage
-const removeFromLocalStorage = () => {};
+const removeFromLocalStorage = (id) => {
+  const productsList = getFromLocalStorage();
+  const remainingProductsList = productsList.filter(
+    (product) => product.id !== id
+  );
+  if (remainingProductsList) {
+    localStorage.setItem("productsList", JSON.stringify(remainingProductsList));
+    return toast.success("removed card");
+  }
+};
 
 //============================== export all function
 export { getFromLocalStorage, setToLocalStorage, removeFromLocalStorage };

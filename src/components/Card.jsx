@@ -1,30 +1,26 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { setToLocalStorage } from "../utilities";
+import { Link, useLocation } from "react-router-dom";
+import { FaRegTrashCan } from "react-icons/fa6";
 
-const Card = ({ product }) => {
+const Card = ({ product, handleRemoveFromDashboard }) => {
   const { id, title, price, thumbnail, rating } = product || {};
   // console.log(id);
-  const handleAddToDashboard = (card) => {
-    setToLocalStorage(card);
-  };
+  const { pathname } = useLocation();
 
   return (
-    <div>
-      <div className="w-full h-96 max-w-sm bg-gray-200 border border-gray-200 rounded-lg shadow">
-        <a href="#">
-          <img
-            className="p-8 rounded-t-lg w-full h-60"
-            src={thumbnail}
-            alt="product image"
-          />
-        </a>
+    <div className="w-full h-96 max-w-sm relative">
+      <div className=" bg-gray-200 border border-gray-200 rounded-lg shadow">
+        <img
+          className="p-8 rounded-t-lg w-full h-60"
+          src={thumbnail}
+          alt="product image"
+        />
+
         <div className="px-5 pb-5">
-          <a href="#">
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
-              {title}
-            </h5>
-          </a>
+          <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">
+            {title}
+          </h5>
+
           <div className="flex items-center mt-2.5 mb-5">
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
               <svg
@@ -88,11 +84,20 @@ const Card = ({ product }) => {
           </div>
         </div>
       </div>
+      {pathname === "/dashboard" && (
+        <div
+          onClick={() => handleRemoveFromDashboard(id)}
+          className="absolute -top-5 -right-5 bg-red-500 p-3 rounded-full"
+        >
+          <FaRegTrashCan></FaRegTrashCan>
+        </div>
+      )}
     </div>
   );
 };
 
 Card.propTypes = {
   product: PropTypes.object,
+  handleRemoveFromDashboard: PropTypes.func,
 };
 export default Card;
